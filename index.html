@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Validades dos Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Gestão de Validades dos Produtos</h1>
+                <h2>Minimercado Autônomo</h2>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="left-panel">
+            <section id="existing-products">
+                <h3>Produtos Existentes no Estoque</h3>
+                <table id="myTable">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Validade</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        
+        <div class="right-panel">
+            <section id="add-product">
+                <h3>Adicionar Produto</h3>
+                <section id="add-product-forms">
+                    <label for="dropdownNome">Nome:</label>
+                    <select id="dropdownNome">
+                        <option value="" disabled selected>Selecione um produto</option>
+                    </select>
+                    <label for="newQuantity">Quantidade:</label>
+                    <input type="number" id="newQuantity" placeholder="Quantidade">
+                    <label for="newExpiration">Validade:</label>
+                    <input type="date" id="newExpiration">
+                    <div class="buttons-container">
+                        <button onclick="addProduto()" class="addBtn">Adicionar</button>
+                        <button onclick="cancelAddProduto()" class="cancelBtn">Cancelar</button>
+                    </div>
+                </section>
+            </section>
+
+            <section id="expiring-products">
+                <h3>Consultar Produtos Próximos ao Vencimento</h3>
+                <div class="buttons-container">
+                    <button onclick="getAndSendProdutosProximosVencimento()" class="listBtn">Verificar e Enviar pelo Telegram</button>
+                </div>
+                <table id="tabelaProdutosProximosVencimento">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Validade</th>
+                    </tr>
+                </table>
+            </section>
+            
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
